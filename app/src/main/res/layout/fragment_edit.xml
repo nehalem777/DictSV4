@@ -1,0 +1,444 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.ndsince.dictsv.Fragment.EditFragment">
+
+    <ScrollView
+        android:id="@+id/scrollViewEditFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/layoutWordCreateHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp">
+
+            </RelativeLayout>
+            <!--end of layoutWordCreateHeader-->
+
+            <LinearLayout
+                android:id="@+id/layoutWordCreateForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutWordCreateHeader"
+                android:background="@color/color_form"
+                android:orientation="vertical">
+
+                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="@style/Divider_Content" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/ic_my_library_add_grey600_24dp" />
+
+                    <TextView
+                        style="@style/text_Subheaders"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="72dp"
+                        android:text="New Word" />
+
+
+
+                </RelativeLayout>
+
+                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="@style/Divider_Content"
+                    android:layout_marginLeft="72dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="72dp"
+                    android:orientation="horizontal">
+
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/edtVocabWord"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="72dp"
+                        android:layout_marginRight="@dimen/editFragment_Layout__marginLR"
+                        android:hint="Word"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        app:floatingLabel="highlight"
+                        app:floatingLabelText="Word" />
+
+
+                </RelativeLayout>
+
+                <!--<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                style="@style/Divider_Content" />-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="72dp"
+                    android:orientation="vertical">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/edtVocabTermino"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="72dp"
+                        android:layout_marginRight="@dimen/editFragment_Layout__marginLR"
+                        android:hint="Terminology"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        app:floatingLabel="highlight"
+                        app:floatingLabelText="Terminology" />
+
+                </RelativeLayout>
+
+                <!--<ImageView xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--style="@style/Divider_Content" />-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:minHeight="72dp"
+                    android:orientation="vertical">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/edtVocabTrans"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginLeft="72dp"
+                        android:layout_marginRight="@dimen/editFragment_Layout__marginLR"
+                        android:hint="Transliterated"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        app:floatingLabel="highlight"
+                        app:floatingLabelText="Transliterated" />
+
+                </RelativeLayout>
+
+                <!--<ImageView xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--style="@style/Divider_Content" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:minHeight="72dp">
+
+                    <Spinner
+
+                        android:id="@+id/spnVocabFirst"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="72dp"
+                        android:layout_marginRight="@dimen/editFragment_Layout__marginLR" />
+
+                </LinearLayout>
+
+                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@android:drawable/divider_horizontal_textfield" />
+
+            </LinearLayout>
+            <!--end of layoutWordCreateForm-->
+
+            <LinearLayout
+
+                android:id="@+id/layoutWordCreateButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layoutWordCreateForm"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:minHeight="48dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnWordCreate"
+                    style="@style/Button_Accept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:maxHeight="36dp"
+                    android:text="CREATE" />
+
+
+                <Button
+                    android:id="@+id/btnWordClear"
+                    style="@style/Button_Clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxHeight="36dp"
+                    android:text="CLEAR" />
+
+            </LinearLayout>
+            <!--end of layoutWordCreateButton-->
+
+            <LinearLayout
+                android:id="@+id/layoutCategoryEditHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/layoutWordCreateButton"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+            <!--end of layoutCategoryEditHeader-->
+
+            <LinearLayout
+                android:id="@+id/layoutCategoryEditForm"
+                style="@style/editText_editFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layoutCategoryEditHeader"
+                android:background="@color/color_form"
+                android:orientation="vertical">
+
+                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="@style/Divider_Content" />
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/ic_local_library_grey600_24dp" />
+
+                    <TextView
+                        style="@style/text_Subheaders"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="72dp"
+                        android:text="Category" />
+                </RelativeLayout>
+
+                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="@style/Divider_Content"
+                    android:layout_marginLeft="72dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="72dp"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/checkboxNewCate"
+                        style="@style/text_Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="19dp"
+                        android:layout_marginLeft="68dp"
+                        android:layout_marginRight="@dimen/editFragment_Layout__marginLR"
+                        android:text="Create New Category" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/layoutSpnMid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="72dp">
+
+                    <Spinner
+
+                        android:id="@+id/spnCateSecond"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="72dp"
+                        android:layout_marginRight="@dimen/editFragment_Layout__marginLR" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="72dp">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/edtCateName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="72dp"
+                        android:layout_marginRight="@dimen/editFragment_Layout__marginLR"
+                        android:hint="Category Name"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        app:floatingLabel="highlight"
+                        app:floatingLabelText="Category Name" />
+
+
+                </RelativeLayout>
+
+                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="@style/Divider_Content" />
+
+
+            </LinearLayout>
+            <!--end of layoutCategoryEditForm-->
+
+            <LinearLayout
+                android:id="@+id/layoutCategoryEditButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layoutCategoryEditForm"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:minHeight="48dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnCateCreate"
+                    style="@style/Button_Accept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:text="CREATE" />
+
+
+                <Button
+                    android:id="@+id/btnCateClear"
+                    style="@style/Button_Clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CLEAR" />
+
+            </LinearLayout>
+            <!--end of layoutCategoryEditButton-->
+
+            <LinearLayout
+                android:id="@+id/layoutCategoryDelHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutCategoryEditButton"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+
+            </LinearLayout>
+            <!--end of layoutCategoryDelHeader-->
+
+            <LinearLayout
+                android:id="@+id/layoutCategoryDelForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layoutCategoryDelHeader"
+                android:background="@color/color_form"
+                android:orientation="vertical">
+
+                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="@style/Divider_Content" />
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/ic_delete_grey600_24dp" />
+
+                    <TextView
+                        style="@style/text_Subheaders"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="72dp"
+                        android:text="Delete Category" />
+
+                </RelativeLayout>
+
+                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="@style/Divider_Content"
+                    android:layout_marginLeft="72dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/layoutSpnBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="72dp">
+
+                    <Spinner
+                        android:id="@+id/spnCateThird"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="72dp"
+                        android:layout_marginRight="@dimen/editFragment_Layout__marginLR" />
+
+                </RelativeLayout>
+
+                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                    style="@style/Divider_Content" />
+            </LinearLayout>
+            <!--end of layoutCategoryDelForm-->
+
+            <LinearLayout
+                android:id="@+id/layoutCategoryDelButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layoutCategoryDelForm"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="25dp">
+
+                <Button
+                    android:id="@+id/btnCateDel"
+                    style="@style/Button_Delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DELETE" />
+
+            </LinearLayout>
+            <!--end of layoutCategoryDelButton-->
+
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>

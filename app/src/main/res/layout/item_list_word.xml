@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="88dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="0.25"
+            android:orientation="vertical"
+            android:paddingBottom="9dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/textViewItemWord"
+                style="@style/textView_itemList_primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Word" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewItemTerminologyLabel"
+                    style="@style/textView_itemList_secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ศัพท์บัญญัติ : " />
+
+                <TextView
+                    android:id="@+id/textViewItemTerminology"
+                    style="@style/textView_itemList_secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Terminology" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewItemTransliteratedLabel"
+                    style="@style/textView_itemList_secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="คำทับศัพท์ิ : " />
+
+                <TextView
+                    android:id="@+id/textViewItemTransliterated"
+                    style="@style/textView_itemList_secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Transliterated" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <!--end of layout_text_word-->
+
+        <LinearLayout
+            android:id="@+id/layoutItemListIMG"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_marginRight="16dp"
+            android:layout_weight="0.75"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingTop="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/textViewItemCategoryName"
+                    style="@style/textView_itemList_secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="8dp"
+                    android:text="CateName"
+                    android:textSize="12sp" />
+
+
+                <ImageButton
+                    android:id="@+id/ImgButtonFav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="8dp"
+                    android:background="@android:color/transparent"
+                    android:minHeight="36dp"
+                    android:minWidth="36dp"
+                    android:src="@drawable/ic_star_outline_grey600_36dp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+        <!--end of layout_IMG-->
+
+    </LinearLayout>
+</RelativeLayout>

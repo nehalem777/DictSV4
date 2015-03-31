@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.3"
+            android:orientation="vertical"
+            android:paddingBottom="9dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/textViewItemWord"
+                style="@style/textView_itemList_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Word" />
+
+            <TextView
+                android:id="@+id/textViewItemTerminology"
+                style="@style/textView_itemList_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Terminology" />
+
+            <TextView
+                android:id="@+id/textViewItemTransliterated"
+                style="@style/textView_itemList_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Transliterated" />
+
+        </LinearLayout>
+        <!--end of layout_text_word-->
+
+        <LinearLayout
+            android:id="@+id/layoutItemListIMG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:layout_weight="0.7"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingRight="10dp"
+            android:paddingTop="4dp">
+
+            <TextView
+                style="@style/textView_itemList_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="Category" />
+
+            <TextView
+                android:id="@+id/textViewItemCategoryName"
+                style="@style/textView_itemList_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="2dp"
+                android:text="CategoryName" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ImgButtonVoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_volume_up_grey600_24dp" />
+
+                <com.andexert.library.RippleView
+                    rv_centered="true"
+                    rv_zoom="true"
+                    rv_zoomScale="2.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/ImgButtonFav"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:paddingLeft="10dp"
+                        android:src="@drawable/ic_star_outline_20dp" />
+
+                </com.andexert.library.RippleView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <!--end of layout_IMG-->
+
+    </LinearLayout>
+</RelativeLayout>

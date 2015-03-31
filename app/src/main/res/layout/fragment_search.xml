@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.ndsince.dictsv.Fragment.SearchFragment">
+
+    <LinearLayout
+
+        android:id="@+id/layout_search__form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:minHeight="72dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <EditText
+            android:id="@+id/edtSearchingWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight="0.25"
+            android:hint="Search"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/btnChoiceCate"
+            style="@style/Button_Category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="0.75"
+            android:text="All" />
+
+    </LinearLayout>
+    <!--end of layout search form-->
+
+
+    <ListView
+        android:id="@+id/listViewSearchFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/layout_search__form"
+        android:background="@android:color/transparent"
+
+        android:dividerHeight="1.5dp"
+        android:drawSelectorOnTop="true">
+
+    </ListView>
+    <!--List View Search-->
+
+</RelativeLayout>
+
+
+    <!--
+    <com.rengwuxian.materialedittext.MaterialEditText
+    android:id="@+id/edtSearchingWord"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="6dp"
+    android:hint="Search"
+    android:singleLine="true"
+    app:floatingLabel="highlight"
+    app:floatingLabelText="Search"/>-->
