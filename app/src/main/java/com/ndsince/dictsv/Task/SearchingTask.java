@@ -11,6 +11,10 @@ import com.ndsince.dictsv.DAO.Favorite;
 import com.ndsince.dictsv.DAO.FavoriteDAO;
 import com.ndsince.dictsv.DAO.Word;
 import com.ndsince.dictsv.DAO.WordDAO;
+import com.ndsince.dictsv.Fragment.FavoritesFragment;
+import com.ndsince.dictsv.Fragment.SearchFragment;
+import com.ndsince.dictsv.LogCheck;
+import com.ndsince.dictsv.MainActivity;
 
 import java.util.HashMap;
 
@@ -18,6 +22,8 @@ import java.util.HashMap;
  * Created by Since on 18/3/2558.
  */
 public class SearchingTask implements Runnable {
+
+    final private static String TAG = "SearchingTask";
 
     Handler handler = new Handler();
     Context mContext;
@@ -119,6 +125,13 @@ public class SearchingTask implements Runnable {
             handler.post(new Runnable() {
                 @Override
                 public void run() {
+
+                    if (inputText.length() > 0 && hashMapWordsSelect.size()==0) {
+                        MainActivity mainActivity = (MainActivity) mContext;
+                        SearchFragment searchFragment = (SearchFragment) mainActivity.getActiveFragment(null, 0);
+                        searchFragment.setFrameWordNotFond();
+                    }
+
                     switch (intCaseListWord) {
                         case 1:
                             listView.setAdapter(null);
@@ -128,17 +141,31 @@ public class SearchingTask implements Runnable {
                                     hashMapWordsSelect, hashMapFavorites, hashMapCategory, "searchTab", listView));
                             break;
                     }
+
+
+
+
                 }
             });
         } else {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    listView.setAdapter(new CustomAdapter(mContext,
-                            hashMapWordsSelect, hashMapFavorites, hashMapCategory, "favoriteTab", listView));
+                    MainActivity mainActivity = (MainActivity) mContext;
+                    FavoritesFragment favoritesFragment = (FavoritesFragment) mainActivity.getActiveFragment(null, 1);
+
+                    if (hashMapWordsSelect.size() == 0) {
+                        listView.setAdapter(null);
+                        favoritesFragment.setFrameFavoriteSuggest(true);
+
+                    } else {
+                        listView.setAdapter(new CustomAdapter(mContext,
+                                hashMapWordsSelect, hashMapFavorites, hashMapCategory, "favoriteTab", listView));
+                        favoritesFragment.setFrameFavoriteSuggest(false);
+                    }
 
                 }
-            }, 500);
+            }, 100);
         }
     }
 }

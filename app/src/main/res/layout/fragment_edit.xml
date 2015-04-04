@@ -60,9 +60,9 @@
 
                 </RelativeLayout>
 
-                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                <!--<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
                     style="@style/Divider_Content"
-                    android:layout_marginLeft="72dp"/>
+                    android:layout_marginLeft="72dp"/>-->
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -245,9 +245,9 @@
                         android:text="Category" />
                 </RelativeLayout>
 
-                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                <!--<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
                     style="@style/Divider_Content"
-                    android:layout_marginLeft="72dp"/>
+                    android:layout_marginLeft="72dp"/>-->
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -392,9 +392,9 @@
 
                 </RelativeLayout>
 
-                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                <!--<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
                     style="@style/Divider_Content"
-                    android:layout_marginLeft="72dp"/>
+                    android:layout_marginLeft="72dp"/>-->
 
                 <RelativeLayout
                     android:id="@+id/layoutSpnBottom"

@@ -27,7 +27,9 @@ import com.ndsince.dictsv.DAO.Favorite;
 import com.ndsince.dictsv.DAO.FavoriteDAO;
 import com.ndsince.dictsv.DAO.Word;
 import com.ndsince.dictsv.DAO.WordDAO;
+import com.ndsince.dictsv.Fragment.FavoritesFragment;
 import com.ndsince.dictsv.LogCheck;
+import com.ndsince.dictsv.MainActivity;
 import com.ndsince.dictsv.R;
 
 import java.util.ArrayList;
@@ -41,7 +43,7 @@ public class CustomAdapter extends BaseAdapter {
 
     private static final String TAG = "CustomAdapter";
 
-    public static boolean chkNewFavoriteTab = false;
+    public static boolean chkReloadFavoriteTab = false;
 
     private LayoutInflater mInflater;
     private Context mContext;
@@ -103,6 +105,15 @@ public class CustomAdapter extends BaseAdapter {
         //Check if refresh CustomAdapter in favorite tabs
         hashMapWords.remove(getItem(position).getmId());
         this.hashMapWordsKey = hashMapWords.keySet().toArray(new Long[hashMapWords.size()]);
+
+
+        MainActivity mainActivity = (MainActivity) mContext;
+        FavoritesFragment favoritesFragment = (FavoritesFragment) mainActivity.getActiveFragment(null, 1);
+        if (hashMapWords.size() == 0) {
+            favoritesFragment.setFrameFavoriteSuggest(true);
+        } else {
+            favoritesFragment.setFrameFavoriteSuggest(false);
+        }
 
         this.notifyDataSetChanged();
     }
@@ -232,7 +243,7 @@ public class CustomAdapter extends BaseAdapter {
                         upDateFavoriteslist(position);
                 }
 
-                chkNewFavoriteTab = true;
+                chkReloadFavoriteTab = true;
                 hashMapFavorite = favoriteDAO.getAllFavorite();
             }
         });
@@ -300,7 +311,7 @@ public class CustomAdapter extends BaseAdapter {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String text;
-                        CustomAdapter.chkNewFavoriteTab = true;
+                        CustomAdapter.chkReloadFavoriteTab = true;
 
                         Word word = new Word();
                         word.setmId(getItem(position).getmId());
@@ -361,7 +372,7 @@ public class CustomAdapter extends BaseAdapter {
                     public void onClick(View view) {
                         wordDAO.deleteWord(getItem(position));
                         upDateFavoriteslist(position);
-                        CustomAdapter.chkNewFavoriteTab = true;
+                        CustomAdapter.chkReloadFavoriteTab = true;
                         dialogDelWord.dismiss();
                     }
                 });

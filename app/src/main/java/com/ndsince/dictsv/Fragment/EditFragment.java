@@ -22,12 +22,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alertdialogpro.AlertDialogPro;
+import com.ndsince.dictsv.Adapter.CustomAdapter;
 import com.ndsince.dictsv.DAO.Category;
 import com.ndsince.dictsv.DAO.CategoryDAO;
 import com.ndsince.dictsv.DAO.Word;
 import com.ndsince.dictsv.DAO.WordDAO;
 import com.ndsince.dictsv.LogCheck;
-import com.ndsince.dictsv.MainActivity;
 import com.ndsince.dictsv.R;
 
 import java.util.ArrayList;
@@ -182,6 +182,7 @@ public class EditFragment extends Fragment {
 
                     setSpinnerCate(true);
                     edtCateName.setText("");
+                    CustomAdapter.chkReloadFavoriteTab = true;
                 }
             }
         }
@@ -207,6 +208,7 @@ public class EditFragment extends Fragment {
 
             LogCheck.d(TAG, "delCategory(chkWordByCategoryID)", "มีคำศัพท์");
             setConfirmDialogDeleteCategory(false);
+            CustomAdapter.chkReloadFavoriteTab = true;
         } else {
 
             LogCheck.d(TAG, "delCategory(chkWordByCategoryID)", "ไม่มีคำศัพท์");

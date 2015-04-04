@@ -2,6 +2,7 @@ package com.ndsince.dictsv.Fragment;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.os.Handler;
 
@@ -41,6 +43,7 @@ public class SearchFragment extends Fragment {
     Button btnChoiceCate;
     EditText edtSearch;
     ListView listViewWords;
+    LinearLayout frameWordNotFond, frameShearchSuggest;
     LayoutInflater inflater;
 
     private WordDAO wordDAO;
@@ -117,6 +120,12 @@ public class SearchFragment extends Fragment {
         btnChoiceCate = (Button) rootView.findViewById(R.id.btnChoiceCate);
 
         listViewWords = (ListView) rootView.findViewById(R.id.listViewSearchFragment);
+
+        frameWordNotFond = (LinearLayout) rootView.findViewById(R.id.frameNotFoundWord);
+        frameShearchSuggest = (LinearLayout) rootView.findViewById(R.id.frameSearchSuggest);
+
+        frameShearchSuggest.setVisibility(View.VISIBLE);
+        frameWordNotFond.setVisibility(View.GONE);
     }
 
     /**
@@ -362,6 +371,14 @@ public class SearchFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
+                if(edtSearch.getText().toString().trim().length() == 0) {
+                    frameShearchSuggest.setVisibility(View.VISIBLE);
+                    frameWordNotFond.setVisibility(View.GONE);
+                } else {
+                    frameWordNotFond.setVisibility(View.GONE);
+                    frameShearchSuggest.setVisibility(View.GONE);
+                }
+
                 SearchingTask searchingTask = new SearchingTask(getActivity(),
                         listViewWords, edtSearch.getText().toString().trim(), getWordList());
                 searchingTask.run();
@@ -385,6 +402,12 @@ public class SearchFragment extends Fragment {
         }*/
         if(edtSearch != null) edtSearch.setText("");
 
+    }
+
+    public void setFrameWordNotFond() {
+
+        frameShearchSuggest.setVisibility(View.GONE);
+        frameWordNotFond.setVisibility(View.VISIBLE);
     }
 
     //----------------------------------------------------------------------------------------------

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.ndsince.dictsv.DAO.CategoryDAO;
@@ -24,6 +25,7 @@ public class FavoritesFragment extends Fragment {
     private static final String TAG = "FavoritesFragment";
 
     ListView listViewWordsFavorite;
+    LinearLayout frameFavoriteSuggest;
 
     private WordDAO wordDAO;
     private CategoryDAO categoryDAO;
@@ -66,6 +68,13 @@ public class FavoritesFragment extends Fragment {
 
     //----------------------------------------------------------------------------------------------
 
+    public void setFrameFavoriteSuggest(boolean chk) {
+        if(chk)
+            frameFavoriteSuggest.setVisibility(View.VISIBLE);
+        else
+            frameFavoriteSuggest.setVisibility(View.GONE);
+    }
+
     public void setListViewAdapter() {
 
         SearchingTask searchingTask = new SearchingTask(getActivity(), listViewWordsFavorite,
@@ -76,5 +85,6 @@ public class FavoritesFragment extends Fragment {
 
     private void initWidget() {
         listViewWordsFavorite = (ListView) rootView.findViewById(R.id.listViewFavoriteFragment);
+        frameFavoriteSuggest = (LinearLayout) rootView.findViewById(R.id.frameFavoriteSuggest);
     }
 }

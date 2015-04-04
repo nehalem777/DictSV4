@@ -23,7 +23,6 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.ndsince.dictsv.Adapter.CustomAdapter;
-import com.ndsince.dictsv.DAO.Category;
 import com.ndsince.dictsv.DAO.CategoryDAO;
 import com.ndsince.dictsv.DAO.DBHelper;
 import com.ndsince.dictsv.DAO.Favorite;
@@ -94,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
             LogCheck.i(TAG, "firstRun", "firstRun");
 
-            CustomAdapter.chkNewFavoriteTab = true;
+            CustomAdapter.chkReloadFavoriteTab = true;
             spEditor.putBoolean(Preferences.KEY_FIRSTRUN, false);
             spEditor.commit();
 
@@ -104,7 +103,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             addWordTask = new AddWordTask(MainActivity.this);
             addWordTask.execute();
 
-            CustomAdapter.chkNewFavoriteTab = true;
+            CustomAdapter.chkReloadFavoriteTab = true;
         }
 
         /******************************************************************************************
@@ -177,15 +176,15 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                         if(searchFragment != null)
                             searchFragment.clearEditText();
 
-                        if (favoritesFragment != null && CustomAdapter.chkNewFavoriteTab) {
+                        if (favoritesFragment != null && CustomAdapter.chkReloadFavoriteTab) {
                             favoritesFragment.setListViewAdapter();
-                            CustomAdapter.chkNewFavoriteTab = false;
+                            CustomAdapter.chkReloadFavoriteTab = false;
                         }
                         break;
 
                     /*case 2:
                         if(editFragment != null)
-                            CustomAdapter.chkNewFavoriteTab = true;*/
+                            CustomAdapter.chkReloadFavoriteTab = true;*/
                 }
                 actionBar.setSelectedNavigationItem(position);
             }
@@ -286,6 +285,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     //----------------------------------------------------------------------------------------------
     public Fragment getActiveFragment(ViewPager container, int position) {
+        if(container==null) container = mViewPager;
+
         String name = "android:switcher:" + container.getId() + ":" + position;
         return getSupportFragmentManager().findFragmentByTag(name);
     }

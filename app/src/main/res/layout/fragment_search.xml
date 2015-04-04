@@ -18,12 +18,16 @@
         android:weightSum="1">
 
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search_grey600_36dp"/>
         <EditText
             android:id="@+id/edtSearchingWord"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
-            android:layout_weight="0.25"
+            android:layout_weight="0.4"
             android:hint="Search"
             android:singleLine="true" />
 
@@ -33,26 +37,91 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
-            android:layout_weight="0.75"
+            android:layout_weight="0.6"
             android:text="All" />
 
     </LinearLayout>
     <!--end of layout search form-->
 
-
-    <ListView
-        android:id="@+id/listViewSearchFragment"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_below="@id/layout_search__form"
-        android:background="@android:color/transparent"
+        android:orientation="vertical">
 
-        android:dividerHeight="1.5dp"
-        android:drawSelectorOnTop="true">
 
-    </ListView>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/frameNotFoundWord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:gravity="top|center"
+                    android:paddingTop="50dp"
+                    android:text="ไม่พบคำศัพท์ที่ต้องการค้นหา"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_playlist_add_grey600_36dp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:gravity="top|center"
+                    android:text="ไปที่แท็บ + เพื่อเพิ่มคำศัพท์ใหม่"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/frameSearchSuggest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="50dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search_grey600"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:gravity="top|center"
+                    android:text="ป้อนคำศัพท์ที่ต้องการค้นหา"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listViewSearchFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/layout_search__form"
+                android:background="@android:color/transparent"
+
+                android:dividerHeight="1.5dp"
+                android:drawSelectorOnTop="true">
+
+            </ListView>
+        </FrameLayout>
+    </LinearLayout>
     <!--List View Search-->
 
 </RelativeLayout>
