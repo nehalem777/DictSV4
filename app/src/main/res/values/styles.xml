@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.V1">
@@ -73,10 +73,11 @@
 
     <style name="Button_Clear" parent="Button">
         <item name="android:background">@drawable/btn_clear</item>
-        <item name="android:layout_marginLeft">0dp</item>
+
     </style>
 
     <style name="Button_Delete" parent="Button">
+        <item name="android:layout_marginLeft">0dp</item>
         <item name="android:background">@drawable/btn_delete</item>
     </style>
 
@@ -169,4 +170,13 @@
         <item name="android:windowExitAnimation">@anim/anim_silde_down</item>
     </style>
 
+
+    <style name="listview_item" parent="Button">
+
+        <item name="android:background">@drawable/listview_press</item>
+        <item name="android:layout_marginLeft">0dp</item>
+        <item name="android:layout_marginRight">0dp</item>
+        <item name="android:width">50dp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
 </resources>

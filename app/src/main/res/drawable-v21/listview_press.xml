@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/list_press">
+
+    <item
+        android:drawable="@color/bg_brfore_press_v21"
+        android:state_pressed="false" />
+
+</ripple>

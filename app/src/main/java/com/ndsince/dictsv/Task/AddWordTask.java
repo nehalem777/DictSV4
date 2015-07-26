@@ -53,8 +53,8 @@ public class AddWordTask extends AsyncTask<Void, Integer, Boolean> {
         //progressDialog
         running = true;
 
-        progressDialogPro.setTitle("Title");
-        progressDialogPro.setMessage("Test");
+        progressDialogPro.setTitle("Add Database");
+        progressDialogPro.setMessage("Please Wait");
         progressDialogPro.show();
 
         progressDialogPro.setCancelable(false);
@@ -66,8 +66,7 @@ public class AddWordTask extends AsyncTask<Void, Integer, Boolean> {
         super.onProgressUpdate(values);
 
         //progressDialogPro.setMessage(String.valueOf(values[0]));
-        progressDialogPro.setTitle("Add Database");
-        progressDialogPro.setMessage("Please Wait");
+
 
     }
 

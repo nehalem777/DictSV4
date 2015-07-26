@@ -22,9 +22,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:textStyle="bold"
             android:text="พบคำศัพท์อยู่ในหมวดนี้!"
-            android:textColor="@color/color__Button_delete_default" />
+            android:textColor="@color/color__Button_delete_default"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textDialogMsg2"
@@ -55,16 +55,6 @@
         android:weightSum="1">
 
         <Button
-            android:id="@+id/btnConfirm"
-            style="@style/Button_Delete"
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="0.5"
-            android:text="Delete" />
-
-        <Button
             android:id="@+id/btnCancel"
             style="@style/Button_Clear"
             android:layout_width="wrap_content"
@@ -73,6 +63,15 @@
             android:layout_gravity="center"
             android:layout_weight="0.5"
             android:text="Cancel" />
+        <Button
+            android:id="@+id/btnConfirm"
+            style="@style/Button_Delete"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:text="Delete" />
     </LinearLayout>
 
 

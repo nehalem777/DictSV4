@@ -9,11 +9,16 @@
     <ScrollView
         android:id="@+id/scrollViewEditFragment"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#ffbcbcbc">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/color_form"
+
+            >
 
             <RelativeLayout
                 android:id="@+id/layoutWordCreateHeader"
@@ -29,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layoutWordCreateHeader"
-                android:background="@color/color_form"
+
                 android:orientation="vertical">
 
                 <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -158,52 +163,44 @@
 
                 </LinearLayout>
 
-                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
-                    android:src="@android:drawable/divider_horizontal_textfield" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnWordClear"
+                        style="@style/Button_Clear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxHeight="36dp"
+                        android:text="CLEAR" />
+
+                    <Button
+                        android:id="@+id/btnWordCreate"
+                        style="@style/Button_Accept"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:enabled="false"
+                        android:maxHeight="36dp"
+                        android:text="CREATE" />
+                </LinearLayout>
 
             </LinearLayout>
+
+            <!--end of layoutWordCreateButton-->
             <!--end of layoutWordCreateForm-->
 
-            <LinearLayout
 
-                android:id="@+id/layoutWordCreateButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/layoutWordCreateForm"
-                android:layout_marginTop="24dp"
-                android:gravity="center"
-                android:minHeight="48dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btnWordCreate"
-                    style="@style/Button_Accept"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:enabled="false"
-                    android:maxHeight="36dp"
-                    android:text="CREATE" />
-
-
-                <Button
-                    android:id="@+id/btnWordClear"
-                    style="@style/Button_Clear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxHeight="36dp"
-                    android:text="CLEAR" />
-
-            </LinearLayout>
-            <!--end of layoutWordCreateButton-->
 
             <LinearLayout
                 android:id="@+id/layoutCategoryEditHeader"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/layoutWordCreateButton"
+                android:layout_below="@+id/layoutWordCreateForm"
                 android:layout_marginTop="24dp"
                 android:orientation="horizontal">
 
@@ -310,9 +307,6 @@
 
                 </RelativeLayout>
 
-                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-                    style="@style/Divider_Content" />
-
 
             </LinearLayout>
             <!--end of layoutCategoryEditForm-->
@@ -326,6 +320,12 @@
                 android:gravity="center"
                 android:minHeight="48dp"
                 android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnCateClear"
+                    style="@style/Button_Clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CLEAR" />
 
                 <Button
                     android:id="@+id/btnCateCreate"
@@ -334,15 +334,6 @@
                     android:layout_height="wrap_content"
                     android:enabled="false"
                     android:text="CREATE" />
-
-
-                <Button
-                    android:id="@+id/btnCateClear"
-                    style="@style/Button_Clear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="CLEAR" />
-
             </LinearLayout>
             <!--end of layoutCategoryEditButton-->
 
@@ -413,8 +404,7 @@
 
                 </RelativeLayout>
 
-                <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-                    style="@style/Divider_Content" />
+
             </LinearLayout>
             <!--end of layoutCategoryDelForm-->
 

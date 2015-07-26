@@ -26,7 +26,7 @@
     <color name="color__Button_delete_default">#ffc03d2a</color>
     <color name="color__Button_delete_press">#ff93301a</color>
 
-
-
+    <color name="list_press">#afffde91</color>
+    <color name="bg_brfore_press_v21">#f0f0f0</color>
 
 </resources>

@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/listview_item"
     android:layout_width="match_parent"
+
     android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="match_parent"
+
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="88dp"
         android:orientation="horizontal"
+
         android:weightSum="1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginLeft="16dp"
             android:layout_weight="0.25"
@@ -25,6 +29,7 @@
                 style="@style/textView_itemList_primary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="top"
                 android:text="Word" />
 
             <LinearLayout
@@ -57,7 +62,7 @@
                     style="@style/textView_itemList_secondary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="คำทับศัพท์ิ : " />
+                    android:text="คำทับศัพท์ : " />
 
                 <TextView
                     android:id="@+id/textViewItemTransliterated"
@@ -84,7 +89,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center">
 
                 <TextView
@@ -98,7 +103,14 @@
                     android:textSize="12sp" />
 
 
-                <ImageButton
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+            <ImageButton
                     android:id="@+id/ImgButtonFav"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -109,7 +121,6 @@
                     android:minHeight="36dp"
                     android:minWidth="36dp"
                     android:src="@drawable/ic_star_outline_grey600_36dp" />
-
             </RelativeLayout>
 
 
